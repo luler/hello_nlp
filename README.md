@@ -1,31 +1,60 @@
-# flask框架练习项目
+# PaddleNLP一键预测功能转接口调用
 
-安装
+## 安装
 
 ```
-git clone https://gitee.com/dreamplay/flask_test.git
+git clone https://github.com/luler/hello_nlp.git
 
 pip install -r requirements.txt
 ```
+docker-compose一键启动
+``` 
+version: "3"
 
-运行
+services:
+  hello_nlp:
+    image: registry.cn-shenzhen.aliyuncs.com/luler/hello_nlp
+    restart: always
+    ports:
+      - 5000:5000
+    volumes:
+      - ./:/root/work
+```
+
+## 运行
 
 ``` 
 python app.py
+```
+或者
 ``` 
-
-目录结构
-
+docker-compose up -d
 ```
-├── README.md
-├── api
-│        ├── __init__.py
-│        └── common_api.py    //接口路由文件
-├── app.py           //启动服务
-├── requirements.txt
-├── route.py         //路由配置文件
-├── setting.py       //配置文件
-└── tool
-    ├── __init__.py
-    └── common.py    // 通用函数文件
-```
+
+## 相关接口
+
+参考：https://github.com/luler/hello_nlp/blob/master/taskflow.md
+
+`POST` /api/pos_tagging
+
+`POST` /api/word_segmentation
+
+`POST` /api/ner
+
+`POST` /api/dependency_parsing
+
+`POST` /api/information_extraction
+
+`POST` /api/knowledge_mining
+
+`POST` /api/text_correction
+
+`POST` /api/text_similarity
+
+`POST` /api/sentiment_analysis
+
+`POST` /api/question_answering
+
+`POST` /api/poetry_generation
+
+`POST` /api/dialogue
