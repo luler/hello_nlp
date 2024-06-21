@@ -8,7 +8,7 @@ WORKDIR /root/work
 
 COPY requirements.txt requirements.txt
 
-RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install -r requirements.txt
 
 COPY . /root/work
 
