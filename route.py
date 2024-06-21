@@ -12,7 +12,7 @@ def add_new_routes(app):
         return tool.common.json_return(str(error), [], 400)
 
     # 自定义路由
-    app.add_url_rule('/api/test', view_func=api.common_api.test, methods=['POST'])
+    app.add_url_rule('/api/test', view_func=api.common_api.test, methods=['GET', 'POST', ])
     # paddlenlp接口
     app.add_url_rule('/api/word_segmentation', view_func=api.paddlenlp_api.word_segmentation, methods=['POST'])
     app.add_url_rule('/api/pos_tagging', view_func=api.paddlenlp_api.pos_tagging, methods=['POST'])

@@ -1,16 +1,16 @@
-FROM python:3.7
+FROM python:3.11-slim
 
 MAINTAINER 1207032539@qq.com
 
 RUN apt update -y && apt install -y libgl1-mesa-dev
 
-RUN pip install paddlepaddle==2.3.0 paddlenlp==2.3.0rc1 -i https://mirror.baidu.com/pypi/simple
-
-COPY . /root/work
-
 WORKDIR /root/work
 
+COPY requirements.txt requirements.txt
+
 RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
+COPY . /root/work
 
 EXPOSE 5000
 

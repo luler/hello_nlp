@@ -31,10 +31,9 @@ if DEBUG == False:
     handler.setFormatter(logging_format)
     logger.addHandler(handler)
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     app.run(
         host=app.config.get('HOST'),
         port=app.config.get('PORT'),
-        debug=DEBUG,
-        threaded=bool(1 - DEBUG)
+        debug=DEBUG
     )
