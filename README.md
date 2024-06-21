@@ -7,7 +7,9 @@ git clone https://github.com/luler/hello_nlp.git
 
 pip install -r requirements.txt
 ```
+
 docker-compose一键启动
+
 ``` 
 version: "3"
 
