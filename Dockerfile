@@ -2,7 +2,7 @@ FROM python:3.11-slim
 
 MAINTAINER 1207032539@qq.com
 
-RUN apt update -y && apt install -y libgl1-mesa-dev
+RUN apt update -y && apt install -y libglib2.0-0 libgomp1
 
 WORKDIR /root/work
 
