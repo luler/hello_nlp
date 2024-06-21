@@ -15,5 +15,6 @@ COPY . /root/work
 EXPOSE 5000
 
 ENV PPNLP_HOME /root/work/paddlenlp
+ENV APP_ENV production
 
 CMD ["python","app.py"]

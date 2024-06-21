@@ -5,3 +5,4 @@ paddlenlp==2.*
 LAC==2.*
 pypinyin==0.*
 opencv-python==4.*
+python-dotenv==1.0.0

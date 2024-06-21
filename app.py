@@ -1,15 +1,18 @@
-import logging
 import logging.handlers
+import os
 import re
 
+import dotenv
 from flask import Flask
 
 import route
 
-app = Flask(__name__)
-app.config.from_pyfile('setting.py')
+dotenv.load_dotenv()
 
-DEBUG = app.config.get('ENV') == 'development'
+app = Flask(__name__)
+
+DEBUG = os.environ.get('APP_ENV', 'production') == 'development'
+
 # 加载路由
 route.add_new_routes(app)
 
@@ -33,7 +36,7 @@ if DEBUG == False:
 
 if __name__ == '__main__':
     app.run(
-        host=app.config.get('HOST'),
-        port=app.config.get('PORT'),
+        host=os.environ.get('HOST', '0.0.0.0'),
+        port=os.environ.get('PORT', 5000),
         debug=DEBUG
     )
